@@ -18,7 +18,7 @@ Một lớp duy nhất: **`vehicle`** — xe bốn bánh (xe con, van, xe buýt,
 
 | Gán | Không gán |
 | --- | --- |
-| xe con, SUV, taxi, xe bán tải | người đi bộ |
+| xe con, SUV, t  axi, xe bán tải | người đi bộ |
 | van, minivan | xe đạp |
 | xe buýt, minibus | **xe máy / mô tô** |
 | xe tải, xe đầu kéo | xe trong ảnh quảng cáo, trong gương, dưới bóng nước |
@@ -49,26 +49,27 @@ Bổ sung của nhóm (nếu có): `...`
 Ghi **frame cụ thể** và **ID cụ thể**, không ghi chung chung.
 
 ### Ca 1
-- Clip / frame / ID: `...`
-- Tình huống: `...`
-- Quyết định: `...`
-- Lý do: `...`
+- Clip / frame / ID: `Clip-01/Frame-100/ID-4`
+- Tình huống: `Xe chỉ bị che một phần rất nhỏ, như bánh xe nhưng phần thân xe còn lại vẫn đủ rõ để nhận dạng.`
+- Quyết định: `Tiếp tục giữ nguyên ID và tracking bình thường.`
+- Lý do: `Phần bị che không làm mất khả năng xác định identity của xe, nên không cần coi đây là một ca gián đoạn track do occlusion.`
 
 ### Ca 2
-- Clip / frame / ID: `...`
-- Tình huống: `...`
-- Quyết định: `...`
-- Lý do: `...`
+- Clip / frame / ID: `Clip-01/Frame-100/ID-5`
+- Tình huống: `Xe đang nhìn thấy rõ thì bị xe khác hoặc vật cản che mất một phần, sau đó phần xe bị che xuất hiện lại.`
+- Quyết định: `Giữ nguyên ID nếu có thể liên kết object trước và sau khi bị che.`
+- Lý do: `Dựa vào vị trí, hướng di chuyển và đặc điểm phần xe còn nhìn thấy để xác định đó vẫn là cùng một xe.`
 
 ### Ca 3
-- Clip / frame / ID: `...`
-- Tình huống: `...`
-- Quyết định: `...`
-- Lý do: `...`
+- Clip / frame / ID: `Clip-01/Frame-136/Xe đỏ góc phải cuối - id8`
+- Tình huống: `Xe vừa xuất hiện ở mép khung hình, ban đầu chỉ nhìn thấy một phần nhỏ nên chưa chắc chắn đó là xe bốn bánh.`
+- Quyết định: `Chỉ bắt đầu track khi đã có đủ bằng chứng để xác định đó là vehicle; tuy nhiên guideline hiện chưa quy định cụ thể “đủ bằng chứng” là như thế nào.`
+- Lý do: `Vì thiếu tiêu chí cụ thể, các annotator có thể chọn những frame bắt đầu khác nhau dù đều cho rằng mình đang làm đúng guideline.`
 
 ## 5. Sửa gì sau khi chấm với gold và sau khi kiểm chéo
 
 Luật nào trong file này hoá ra còn thiếu hoặc còn mơ hồ? Viết lại cho rõ:
 
-- `...`
-- `...`
+- `**trước rework**`
+
+- `**sau rework**`
